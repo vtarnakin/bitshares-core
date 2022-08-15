@@ -34,6 +34,8 @@
 #include <graphene/chain/committee_member_object.hpp>
 #include <graphene/chain/confidential_object.hpp>
 #include <graphene/chain/credit_offer_object.hpp>
+#include <graphene/chain/dapp_object.hpp>
+#include <graphene/chain/dapp_account_object.hpp>
 #include <graphene/chain/fba_object.hpp>
 #include <graphene/chain/global_property_object.hpp>
 #include <graphene/chain/liquidity_pool_object.hpp>
@@ -60,6 +62,8 @@
 #include <graphene/chain/confidential_evaluator.hpp>
 #include <graphene/chain/credit_offer_evaluator.hpp>
 #include <graphene/chain/custom_evaluator.hpp>
+#include <graphene/chain/dapp_evaluator.hpp>
+#include <graphene/chain/dapp_account_evaluator.hpp>
 #include <graphene/chain/liquidity_pool_evaluator.hpp>
 #include <graphene/chain/market_evaluator.hpp>
 #include <graphene/chain/proposal_evaluator.hpp>
@@ -145,6 +149,8 @@ void database::initialize_evaluators()
    register_evaluator<credit_offer_update_evaluator>();
    register_evaluator<credit_offer_accept_evaluator>();
    register_evaluator<credit_deal_repay_evaluator>();
+   register_evaluator<dapp_create_evaluator>();
+   register_evaluator<dapp_account_create_evaluator>();
 }
 
 void database::initialize_indexes()
@@ -195,6 +201,8 @@ void database::initialize_indexes()
    add_index< primary_index<collateral_bid_index                          > >();
    add_index< primary_index< simple_index< fba_accumulator_object       > > >();
    add_index< primary_index<credit_deal_summary_index                     > >();
+   add_index< primary_index<dapp_index                                    > >();
+   add_index< primary_index<dapp_account_index                            > >();
 }
 
 } }

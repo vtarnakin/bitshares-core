@@ -6,6 +6,7 @@ list(APPEND SOURCES account.cpp
                     block.cpp
                     confidential.cpp
                     chain_parameters.cpp
+                    dapp.cpp
                     fee_schedule.cpp
                     fee_schedule_calc.cpp
                     fee_schedule_serialization_pack.cpp

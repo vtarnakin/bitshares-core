@@ -46,7 +46,9 @@ struct hardfork_visitor {
    using first_unforked_op = protocol::custom_authority_create_operation;
    using BSIP_40_ops = fc::typelist::list< protocol::custom_authority_create_operation,
                                            protocol::custom_authority_update_operation,
-                                           protocol::custom_authority_delete_operation>;
+                                           protocol::custom_authority_delete_operation,
+                                           protocol::dapp_create_operation,
+                                           protocol::dapp_account_create_operation>;
    using hf2103_ops = fc::typelist::list< protocol::ticket_create_operation,
                                           protocol::ticket_update_operation>;
    using liquidity_pool_ops = fc::typelist::list< protocol::liquidity_pool_create_operation,

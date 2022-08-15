@@ -24,6 +24,8 @@
 
 #include <graphene/protocol/fee_schedule.hpp>
 
+#include <graphene/chain/dapp_object.hpp>
+#include <graphene/chain/dapp_account_object.hpp>
 #include <graphene/chain/balance_object.hpp>
 #include <graphene/chain/block_summary_object.hpp>
 #include <graphene/chain/budget_record_object.hpp>
@@ -48,8 +50,14 @@
 
 #include <fc/io/raw.hpp>
 
+FC_REFLECT_DERIVED_NO_TYPENAME( graphene::chain::dapp_object, (graphene::db::object),
+            (owner_account_id)(name)(options) )
+
+FC_REFLECT_DERIVED_NO_TYPENAME( graphene::chain::dapp_account_object, (graphene::db::object),
+            (account_id)(dapp_id)(created) )
+
 FC_REFLECT_DERIVED_NO_TYPENAME( graphene::chain::balance_object, (graphene::db::object),
-                    (owner)(balance)(vesting_policy)(last_claim_date) )
+            (owner)(balance)(vesting_policy)(last_claim_date) )
 
 FC_REFLECT_DERIVED_NO_TYPENAME( graphene::chain::block_summary_object, (graphene::db::object), (block_id) )
 
@@ -244,6 +252,8 @@ FC_REFLECT_DERIVED_NO_TYPENAME( graphene::chain::credit_deal_summary_object, (gr
                     (total_debt_amount)
                   )
 
+GRAPHENE_IMPLEMENT_EXTERNAL_SERIALIZATION( graphene::chain::dapp_object )
+GRAPHENE_IMPLEMENT_EXTERNAL_SERIALIZATION( graphene::chain::dapp_account_object )
 GRAPHENE_IMPLEMENT_EXTERNAL_SERIALIZATION( graphene::chain::balance_object )
 GRAPHENE_IMPLEMENT_EXTERNAL_SERIALIZATION( graphene::chain::block_summary_object )
 GRAPHENE_IMPLEMENT_EXTERNAL_SERIALIZATION( graphene::chain::budget_record )

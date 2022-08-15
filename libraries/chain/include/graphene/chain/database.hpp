@@ -29,6 +29,8 @@
 #include <graphene/chain/node_property_object.hpp>
 #include <graphene/chain/account_object.hpp>
 #include <graphene/chain/asset_object.hpp>
+#include <graphene/chain/dapp_object.hpp>
+#include <graphene/chain/dapp_account_object.hpp>
 #include <graphene/chain/fork_database.hpp>
 #include <graphene/chain/block_database.hpp>
 #include <graphene/chain/genesis_state.hpp>
