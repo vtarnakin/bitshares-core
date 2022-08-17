@@ -23,8 +23,12 @@
  */
 #pragma once
 
-#define GRAPHENE_SYMBOL "BTS"
-#define GRAPHENE_ADDRESS_PREFIX "BTS"
+#define GRAPHENE_SYMBOL "EVX"
+#define GRAPHENE_ADDRESS_PREFIX "EVX"
+
+#define GRAPHENE_CORE_DAO (graphene::protocol::dao_id_type(0)) 
+#define GRAPHENE_CORE_DAO_SYMBOL "Everypixel"
+#define GRAPHENE_CORE_DAO_DESCRIPTION "Everypixel Blockchain DAO"
 
 #define GRAPHENE_BLOCKCHAIN_PRECISION        uint64_t( 100000 )
 #define GRAPHENE_BLOCKCHAIN_PRECISION_DIGITS 5

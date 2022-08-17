@@ -39,10 +39,19 @@ struct get_impacted_account_visitor
 
    using result_type = void;
 
-   void operator()( dapp_create_operation const& op )
+   void operator()( dao_create_operation const& op )
    { _impacted.insert( op.fee_payer() ); }
    
-   void operator()( dapp_account_create_operation const& op )
+   void operator()( dao_update_owner_operation const& op )
+   { _impacted.insert( op.fee_payer() ); }
+   
+   void operator()( dao_update_operation const& op )
+   { _impacted.insert( op.fee_payer() ); }
+   
+   void operator()( dao_account_create_operation const& op )
+   { _impacted.insert( op.fee_payer() ); }
+   
+   void operator()( dao_dapp_create_operation const& op )
    { _impacted.insert( op.fee_payer() ); }
    
    void operator()( const transfer_operation& op )
@@ -422,15 +431,18 @@ static void get_relevant_accounts( const object* obj, flat_set<account_id_type>&
         case account_object_type:
            accounts.insert( obj->id );
            break;
-        case dapp_object_type:{
-           const auto* aobj = dynamic_cast<dapp_object const*>( obj );
+        case dao_object_type:{
+           const auto* aobj = dynamic_cast<dao_object const*>( obj );
            accounts.insert( aobj->owner_account_id );
            break;
-        } case dapp_account_object_type:{
-           const auto* aobj = dynamic_cast<dapp_account_object const*>( obj );
+        } case dao_account_object_type:{
+           const auto* aobj = dynamic_cast<dao_account_object const*>( obj );
            accounts.insert( aobj->account_id );
            break;
-        } case asset_object_type:{
+        } case dao_dapp_object_type:
+           // no account info in the object although it does have an owner
+           break;
+        case asset_object_type:{
            const auto* aobj = dynamic_cast<const asset_object*>(obj);
            accounts.insert( aobj->issuer );
            break;

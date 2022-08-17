@@ -44,7 +44,7 @@
 #include <graphene/protocol/withdraw_permission.hpp>
 #include <graphene/protocol/witness.hpp>
 #include <graphene/protocol/worker.hpp>
-#include <graphene/protocol/dapp.hpp>
+#include <graphene/protocol/dao.hpp>
 
 namespace graphene { namespace protocol {
 
@@ -129,8 +129,11 @@ namespace graphene { namespace protocol {
             /* 72 */ credit_offer_accept_operation,
             /* 73 */ credit_deal_repay_operation,
             /* 74 */ credit_deal_expired_operation,    // VIRTUAL
-            /* 75 */ dapp_create_operation,
-            /* 76 */ dapp_account_create_operation
+            /* 75 */ dao_create_operation,
+            /* 76 */ dao_update_owner_operation,
+            /* 77 */ dao_update_operation,
+            /* 78 */ dao_account_create_operation,
+            /* 79 */ dao_dapp_create_operation
          >;
 
    /// @} // operations group

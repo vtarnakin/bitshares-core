@@ -143,7 +143,10 @@ public:
     * @brief return basic info about the chain
     */
    variant info() const;
-
+   /*
+   signed_transaction register_dapp( string name, account_id_type owner_account_id, dapp_options common_options );
+   signed_transaction register_dapp_account( account_id_type account_id, dapp_id_type dapp_id );
+*/  
    /***
     * @brief return basic information about this program
     */

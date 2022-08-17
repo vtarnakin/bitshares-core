@@ -39,8 +39,9 @@ add_library( graphene_chain
              evaluator.cpp
              liquidity_pool_evaluator.cpp
              samet_fund_evaluator.cpp
-             dapp_evaluator.cpp
-             dapp_account_evaluator.cpp
+             dao_evaluator.cpp
+             dao_account_evaluator.cpp
+             dao_dapp_evaluator.cpp
              credit_offer_evaluator.cpp
              balance_evaluator.cpp
              account_evaluator.cpp

@@ -158,6 +158,13 @@ wallet_api::wallet_api(const wallet_data& initial_data, fc::api<login_api> rapi)
 wallet_api::~wallet_api()
 {
 }
+/*
+signed_transaction wallet_api::register_dapp( string name, account_id_type owner_account_id, dapp_options common_options )
+{ return my->register_dapp( name, owner_account_id, common_options ); }
+
+signed_transaction wallet_api::register_dapp_account( account_id_type account_id, dapp_id_type dapp_id )
+{ return my->register_dapp_account( account_id, dapp_id ); }
+*/     
 
 bool wallet_api::copy_wallet_file(string destination_filename)
 {
