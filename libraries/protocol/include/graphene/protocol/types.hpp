@@ -349,7 +349,8 @@ GRAPHENE_DEFINE_IDS(protocol, protocol_ids, /*protocol objects are not prefixed*
                     /* 1.22.x */ (credit_deal)
                     /* 1.23.x */ (dao)
                     /* 1.24.x */ (dao_account)
-                    /* 1.25.x */ (dao_dapp)
+                    /* 1.25.x */ (dao_project)
+                    /* 1.26.x */ //(dao_file)
                    )
 
 FC_REFLECT(graphene::protocol::public_key_type, (key_data))

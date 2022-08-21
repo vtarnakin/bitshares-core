@@ -64,7 +64,7 @@
 #include <graphene/chain/custom_evaluator.hpp>
 #include <graphene/chain/dao_evaluator.hpp>
 #include <graphene/chain/dao_account_evaluator.hpp>
-#include <graphene/chain/dao_dapp_evaluator.hpp>
+#include <graphene/chain/dao_project_evaluator.hpp>
 #include <graphene/chain/liquidity_pool_evaluator.hpp>
 #include <graphene/chain/market_evaluator.hpp>
 #include <graphene/chain/proposal_evaluator.hpp>
@@ -154,7 +154,7 @@ void database::initialize_evaluators()
    register_evaluator<dao_update_owner_evaluator>();
    register_evaluator<dao_update_evaluator>();
    register_evaluator<dao_account_create_evaluator>();
-   register_evaluator<dao_dapp_create_evaluator>();
+   register_evaluator<dao_project_create_evaluator>();
 }
 
 void database::initialize_indexes()
@@ -207,7 +207,7 @@ void database::initialize_indexes()
    add_index< primary_index<credit_deal_summary_index                     > >();
    add_index< primary_index<dao_index                                     > >();
    add_index< primary_index<dao_account_index                             > >();
-   add_index< primary_index<dao_dapp_index                                > >();
+   add_index< primary_index<dao_project_index                             > >();
 }
 
 } }

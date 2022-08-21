@@ -186,10 +186,10 @@ void database::init_genesis(const genesis_state_type& genesis_state)
    }
    // Create core DAO
    create<dao_object>( [this]( auto &core_dao_obj ) {
-      core_dao_obj.name = GRAPHENE_CORE_DAO_SYMBOL;
+      core_dao_obj.short_name = GRAPHENE_CORE_DAO_SHORT_NAME;
+      core_dao_obj.long_name = GRAPHENE_CORE_DAO_LONG_NAME;
       core_dao_obj.owner_account_id = GRAPHENE_NULL_ACCOUNT;
       core_dao_obj.options.description = GRAPHENE_CORE_DAO_DESCRIPTION;
-      core_dao_obj.dapp_urls = { "https://www.everypixel.com/epx" };
       core_dao_obj.created = time_point_sec();
       this->create<dao_account_object>( [&core_dao_obj]( auto &core_dao_acc_obj ) {
          core_dao_acc_obj.account_id = core_dao_obj.owner_account_id;

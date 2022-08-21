@@ -51,7 +51,7 @@ struct hardfork_visitor {
                                            protocol::dao_update_owner_operation,
                                            protocol::dao_update_operation,
                                            protocol::dao_account_create_operation,
-                                           protocol::dao_dapp_create_operation>;
+                                           protocol::dao_project_create_operation>;
    using hf2103_ops = fc::typelist::list< protocol::ticket_create_operation,
                                           protocol::ticket_update_operation>;
    using liquidity_pool_ops = fc::typelist::list< protocol::liquidity_pool_create_operation,

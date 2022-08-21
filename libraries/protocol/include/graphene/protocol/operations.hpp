@@ -133,7 +133,7 @@ namespace graphene { namespace protocol {
             /* 76 */ dao_update_owner_operation,
             /* 77 */ dao_update_operation,
             /* 78 */ dao_account_create_operation,
-            /* 79 */ dao_dapp_create_operation
+            /* 79 */ dao_project_create_operation
          >;
 
    /// @} // operations group

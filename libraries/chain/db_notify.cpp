@@ -43,7 +43,10 @@ struct get_impacted_account_visitor
    { _impacted.insert( op.fee_payer() ); }
    
    void operator()( dao_update_owner_operation const& op )
-   { _impacted.insert( op.fee_payer() ); }
+   { 
+      _impacted.insert( op.fee_payer() );
+      _impacted.insert( op.new_owner_account_id );
+   }
    
    void operator()( dao_update_operation const& op )
    { _impacted.insert( op.fee_payer() ); }
@@ -51,7 +54,7 @@ struct get_impacted_account_visitor
    void operator()( dao_account_create_operation const& op )
    { _impacted.insert( op.fee_payer() ); }
    
-   void operator()( dao_dapp_create_operation const& op )
+   void operator()( dao_project_create_operation const& op )
    { _impacted.insert( op.fee_payer() ); }
    
    void operator()( const transfer_operation& op )
@@ -439,7 +442,7 @@ static void get_relevant_accounts( const object* obj, flat_set<account_id_type>&
            const auto* aobj = dynamic_cast<dao_account_object const*>( obj );
            accounts.insert( aobj->account_id );
            break;
-        } case dao_dapp_object_type:
+        } case dao_project_object_type:
            // no account info in the object although it does have an owner
            break;
         case asset_object_type:{

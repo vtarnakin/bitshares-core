@@ -27,8 +27,9 @@
 #define GRAPHENE_ADDRESS_PREFIX "EVX"
 
 #define GRAPHENE_CORE_DAO (graphene::protocol::dao_id_type(0)) 
-#define GRAPHENE_CORE_DAO_SYMBOL "Everypixel"
-#define GRAPHENE_CORE_DAO_DESCRIPTION "Everypixel Blockchain DAO"
+#define GRAPHENE_CORE_DAO_SHORT_NAME "EVX"
+#define GRAPHENE_CORE_DAO_LONG_NAME "Everypixel Foundation"
+#define GRAPHENE_CORE_DAO_DESCRIPTION "DAO Everypixel Foundation"
 
 #define GRAPHENE_BLOCKCHAIN_PRECISION        uint64_t( 100000 )
 #define GRAPHENE_BLOCKCHAIN_PRECISION_DIGITS 5

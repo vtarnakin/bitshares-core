@@ -31,7 +31,7 @@
 #include <graphene/chain/asset_object.hpp>
 #include <graphene/chain/dao_object.hpp>
 #include <graphene/chain/dao_account_object.hpp>
-#include <graphene/chain/dao_dapp_object.hpp>
+#include <graphene/chain/dao_project_object.hpp>
 #include <graphene/chain/fork_database.hpp>
 #include <graphene/chain/block_database.hpp>
 #include <graphene/chain/genesis_state.hpp>

@@ -41,7 +41,7 @@ add_library( graphene_chain
              samet_fund_evaluator.cpp
              dao_evaluator.cpp
              dao_account_evaluator.cpp
-             dao_dapp_evaluator.cpp
+             dao_project_evaluator.cpp
              credit_offer_evaluator.cpp
              balance_evaluator.cpp
              account_evaluator.cpp
